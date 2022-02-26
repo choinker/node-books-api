@@ -17,3 +17,5 @@ dotenv
 
 ## TODO
 Use `express-validator` to facilitate input sanitization and validation
+
+Implement server.js as a class instead of script

@@ -3,6 +3,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// Initialize dotenv for secret mgmt
+require('dotenv').config();
+
 // Define app
 const app = express();
 
@@ -27,5 +30,18 @@ app.options('*', cors());
 
 // Mongo DB adapter
 // TODO: use .env user and password
-const connectionString = 'mongodb+srv://<username>:<password>@andrewcluster0.zx950.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-mongoose.connect('mongodb+srv://<username>:<password>@andrewcluster0.zx950.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+const mongoUser = process.env.mongoUser;
+const mongoPass = process.env.mongoPass;
+
+console.log('andrew user: ', mongoUser, ' pass: ', mongoPass);
+
+const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@andrewcluster0.zx950.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
+
+require('./controllers/book-controller')(app);
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log('server is running on ', port);
+});
