@@ -5,12 +5,8 @@ module.exports = (app) => {
     app.get('/api/v1/books', async (req, res) => {
         console.log('andrew ping books endpoint');
         
-        // bookService.findAllBooks()
-        //     .then(allBooks => res.json(allBooks))});
-        // TODO: implement async await below
         try {
             const books = await bookService.findAllBooks();
-            console.log('andrew books resp: ', books);
             res.json(books);
         } catch(err) {
             // TODO: better error handling on res, return a status

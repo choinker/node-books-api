@@ -29,7 +29,6 @@ app.use(cors({
 app.options('*', cors());
 
 // Mongo DB adapter
-// TODO: use .env user and password
 const mongoUser = process.env.mongoUser;
 const mongoPass = process.env.mongoPass;
 
@@ -38,11 +37,21 @@ console.log('andrew user: ', mongoUser, ' pass: ', mongoPass);
 const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@andrewcluster0.zx950.mongodb.net/categories?retryWrites=true&w=majority`;
 mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
 
+// Mongoose debugging, prints queries to console
+mongoose.set('debug', true);
+/*
+mongoose.set("debug", (collectionName, method, query, doc) => {
+    console.log(`${collectionName}.${method}`, JSON.stringify(query), doc);
+});
+*/
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   console.log("database connected");
 });
+
+
 
 require('./controllers/book-controller')(app);
 

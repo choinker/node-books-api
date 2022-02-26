@@ -15,6 +15,9 @@ mongoose
 cors
 dotenv
 
+## Endpoints
+`http://localhost:3000/api/v1/books` - returns all books in the collection
+
 ## TODO
 Use `express-validator` to facilitate input sanitization and validation
 
