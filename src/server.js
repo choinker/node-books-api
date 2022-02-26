@@ -38,6 +38,12 @@ console.log('andrew user: ', mongoUser, ' pass: ', mongoPass);
 const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@andrewcluster0.zx950.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
 
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log("database connected");
+});
+
 require('./controllers/book-controller')(app);
 
 const port = process.env.PORT || 3000;
