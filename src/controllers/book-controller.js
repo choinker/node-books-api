@@ -1,8 +1,11 @@
+const bookService = require('../services/book-service');
+
 module.exports = (app) => {
     // Return all books
     app.get('/api/v1/books', (req, res) => {
         console.log('andrew ping books endpoint');
-        res.send('andrew ping books endpoint');
+        const books = bookService.findAllBooks();
+        res.send(books);
     });
 
     app.get('/api/v1/books/:bid', (req, res) => {
