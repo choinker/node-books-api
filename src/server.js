@@ -35,7 +35,7 @@ const mongoPass = process.env.mongoPass;
 
 console.log('andrew user: ', mongoUser, ' pass: ', mongoPass);
 
-const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@andrewcluster0.zx950.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@andrewcluster0.zx950.mongodb.net/categories?retryWrites=true&w=majority`;
 mongoose.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
