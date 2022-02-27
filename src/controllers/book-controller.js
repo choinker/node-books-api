@@ -24,6 +24,13 @@ module.exports = (app) => {
 
     app.get('/', (req, res) => {
         res.send('Hello world!');
-     });
+    });
+
+    // Catch all requests that don't match any route to serve the built react app
+    app.get('*', (req, res) => {
+        res.sendFile(
+            path.join(__dirname, '../frontend/build/index.html')
+        );
+    })
 };
 

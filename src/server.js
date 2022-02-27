@@ -26,6 +26,11 @@ app.use(cors({
     origin: true
 }));
 
+// Pick up react index.html file
+app.use(
+    express.static(path.join(__dirname, './frontend/build'))
+);
+
 app.options('*', cors());
 
 // Mongo DB adapter
@@ -50,8 +55,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   console.log("database connected");
 });
-
-
 
 require('./controllers/book-controller')(app);
 
