@@ -8,6 +8,8 @@ npm 8
 node src/server.js - runs backend node server and endpoints locally
 cd src/frontend && npm start - runs front end react code
 
+`npm dev` - at root to run both front and back end concurrently
+
 ## Endpoints
 `http://localhost:3000/api/v1/books` - returns all books in the collection
 `https://node-categories-api.herokuapp.com/` - heroku app
@@ -26,6 +28,7 @@ express
 mongoose
 cors
 dotenv
+concurrently - helps us run front and backend apps at the same time locally
 
 
 ## Debugging Heroku
