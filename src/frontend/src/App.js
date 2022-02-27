@@ -6,28 +6,33 @@ import TopNav from './components/TopNav';
 
 
 function App() {
-
+  const [scene, setScene] = useState('home');
   const [books, setBooks] = useState([]);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(async () => {
     const booksApiJson = await getAllBooks();
-    debugger;
     setBooks(booksApiJson);
     setIsReady(true);
   }, []);
+
+  const changeScene = (newScene) => {
+    setScene(newScene);
+  };
 
   return (
     <>
     
       {isReady ? (
         <div className="App">
-          <TopNav />
+          <TopNav setScene={changeScene} />
           <header className="App-header">
-            <TopNav />
             <img src={logo} className="App-logo" alt="logo" />
             <p>
               Edit <code>src/App.js</code> and save to reload.
+            </p>
+            <p>
+              scene={scene}
             </p>
             <a
               className="App-link"
@@ -37,12 +42,6 @@ function App() {
             >
               Learn React
             </a>
-            <div>
-              Andrew response div books json
-              {books.map((book) => {
-                <div>{book}</div>
-              })}
-            </div>
           </header>
           <div>
             Andrew response div books json
