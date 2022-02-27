@@ -45,9 +45,6 @@ function App() {
               Learn React
             </a>
           </header>
-          <div>
-            Andrew response div books json
-          </div>
           <CategoryHome categoryName='testName' categoryData={books} />
         </div>
 
