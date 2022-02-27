@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { getAllBooks } from './api/index';
 import TopNav from './components/TopNav';
+import CategoryHome from './components/CategoryHome';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   useEffect(async () => {
     const booksApiJson = await getAllBooks();
+    console.log('andrew books json: ', booksApiJson);
     setBooks(booksApiJson);
     setIsReady(true);
   }, []);
@@ -46,6 +48,7 @@ function App() {
           <div>
             Andrew response div books json
           </div>
+          <CategoryHome categoryName='testName' categoryData={books} />
         </div>
 
         ) : (
