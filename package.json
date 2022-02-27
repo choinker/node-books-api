@@ -8,7 +8,7 @@
     "server": "nodemon",
     "client": "npm start --prefix src/frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": " cd src/frontend && npm install && npm run build --prefix src/frontend",
+    "build": " cd src/frontend && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
