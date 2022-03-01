@@ -41,7 +41,7 @@ function App() {
               Learn React
             </a>
           </header>
-          <CategoryHome categoryName='testName' categoryData={books} />
+          <CategoryHome categoryName={scene} categoryData={books} />
         </div>
 
         ) : (

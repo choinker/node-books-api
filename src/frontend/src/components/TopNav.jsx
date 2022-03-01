@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Button, VStack, IconButton } from '@chakra-ui/react';
+import React from 'react';
+import { Button, VStack, IconButton, Heading } from '@chakra-ui/react';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const TopNav = ({setScene}) => {
 
-
+    // p={x} - injects padding where x*4(pixels), so 4 is 16 pixels of padding
     return (
-        <VStack>
-            <IconButton isRound />
-            <h1>top nav</h1>
+        <VStack p={4}>
+            <IconButton icon={<FaSun />} isRound size='lg' alignSelf='flex-end' />
+            <Heading mb='20'>top nav</Heading>
             <div style={{display: 'flex', justifyContent: 'space-around', backgroundColor: '5e88dd'}}>
                 <Button onClick={() => {setScene('books')}} > 
                     Books 
