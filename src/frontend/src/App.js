@@ -4,7 +4,7 @@ import './App.css';
 import { getAllBooks } from './api/index';
 import TopNav from './components/TopNav';
 import CategoryHome from './components/CategoryHome';
-
+import DefaultReactHeader from './components/DefaultReactHeader';
 
 function App() {
   const [scene, setScene] = useState('home');
@@ -12,6 +12,7 @@ function App() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(async () => {
+    // TODO: place in try catch, and change to kent dodds style of async useeffect
     const booksApiJson = await getAllBooks();
     console.log('andrew books json: ', booksApiJson);
     setBooks(booksApiJson);
@@ -27,23 +28,9 @@ function App() {
       {isReady ? (
         <div className="App">
           <TopNav setScene={changeScene} />
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              scene={scene}
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+          <DefaultReactHeader />
           <CategoryHome categoryName={scene} categoryData={books} />
         </div>
-
         ) : (
           <div>loading</div>
         )
