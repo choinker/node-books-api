@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from '@chakra-ui/react';
 
 const TopNav = ({setScene}) => {
 
 
     return (
         <div> 
-            top nav 
+            <h1>top nav</h1>
             <div style={{display: 'flex', justifyContent: 'space-around', backgroundColor: '5e88dd'}}>
-                <button onClick={() => {setScene('books')}} > 
+                <Button onClick={() => {setScene('books')}} > 
                     Books 
-                </button>
-                <button onClick={() => {setScene('movies')}} > 
+                </Button>
+                <Button onClick={() => {setScene('movies')}} > 
                     Movies 
-                </button>
-                <button onClick={() => {setScene('games')}} > 
+                </Button>
+                <Button onClick={() => {setScene('games')}} > 
                     Games 
-                </button>
+                </Button>
                 {/* <button
                     onClick={() => {setScene('cocktails')}}
                 > Cocktails </button>
@@ -26,8 +27,6 @@ const TopNav = ({setScene}) => {
                     onClick={() => {setScene('beers')}}
                 > Beers </button> */}
             </div>
-            
-
         </div>
     );
 };
