@@ -5,10 +5,17 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 const TopNav = ({setScene}) => {
 
     // p={x} - injects padding where x*4(pixels), so 4 is 16 pixels of padding
+    // https://chakra-ui.com/docs/theming/theme - chakra color docs, used in header gradient
     return (
         <VStack p={4}>
             <IconButton icon={<FaSun />} isRound size='lg' alignSelf='flex-end' />
-            <Heading mb='20'>top nav</Heading>
+            <Heading 
+                style={{marginBottom: '24px'}} 
+                size='2xl' fontWeight='extrabold' 
+                bgGradient='linear(to-r, pink.500, pink.300, blue.500)'
+            >
+                top nav
+            </Heading>
             <div style={{display: 'flex', justifyContent: 'space-around', backgroundColor: '5e88dd'}}>
                 <Button onClick={() => {setScene('books')}} > 
                     Books 
