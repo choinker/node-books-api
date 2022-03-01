@@ -12,7 +12,7 @@ const TopNav = ({setScene}) => {
     // TODO: figure out why buttons div styling is getting ignored, adding alignItems='stretch' to buttons div spaces them out across the space
     return (
         <VStack p={4}>
-            <IconButton icon={<FaSun />} isRound size='lg' alignSelf='flex-end' onClick={toggleColorMode} />
+            <IconButton icon={colorMode === 'light' ? <FaSun /> : <FaMoon />} isRound size='lg' alignSelf='flex-end' onClick={toggleColorMode} />
             <Heading 
                 style={{marginBottom: '24px'}} 
                 size='2xl' fontWeight='extrabold' 
