@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, VStack, IconButton, Heading, HStack } from '@chakra-ui/react';
+import { Button, VStack, IconButton, Heading, HStack, useColorMode } from '@chakra-ui/react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 const TopNav = ({setScene}) => {
 
+    const { colorMode, toggleColorMode } = useColorMode();
     // p={x} - injects padding where x*4(pixels), so 4 is 16 pixels of padding
     // https://chakra-ui.com/docs/theming/theme - chakra color docs, used in header gradient
     // without bgClip='text' the background of text has the gradient
@@ -11,7 +12,7 @@ const TopNav = ({setScene}) => {
     // TODO: figure out why buttons div styling is getting ignored, adding alignItems='stretch' to buttons div spaces them out across the space
     return (
         <VStack p={4}>
-            <IconButton icon={<FaSun />} isRound size='lg' alignSelf='flex-end' />
+            <IconButton icon={<FaSun />} isRound size='lg' alignSelf='flex-end' onClick={toggleColorMode} />
             <Heading 
                 style={{marginBottom: '24px'}} 
                 size='2xl' fontWeight='extrabold' 
