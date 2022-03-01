@@ -11,7 +11,7 @@ cd src/frontend && npm start - runs front end react code
 `npm dev` - at root to run both front and back end concurrently
 
 ## Endpoints
-`http://localhost:3000/api/v1/books` - returns all books in the collection
+`http://localhost:8080/api/v1/books` - returns all books in the collection
 `https://node-categories-api.herokuapp.com/` - heroku app
 
 ## Architecture
