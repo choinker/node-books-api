@@ -5,6 +5,8 @@ import { FaHeart } from 'react-icons/fa';
 const CategoryHome = ({categoryName = 'default', categoryData = []}) => {
 
     // TODO: extract year from pubDate, break out card component
+    // Right now the maxW styling doesn't work because I wrapped them in an HStack, VStack combo, if I remove the VStack it will work
+    // 24min flat in tutorial 
 
     return (
         <VStack divider={<StackDivider />}>
@@ -14,7 +16,13 @@ const CategoryHome = ({categoryName = 'default', categoryData = []}) => {
             <div style={{display: 'flex', justifyContent: 'space-around'}}>
                 {categoryData && categoryData.map((element) => {
                     return (
-                        <HStack key={element._id} p='2' borderColor='gray.100' borderWidth='2px' borderRadius='lg' width='50%' maxW={{base: '90vw', sm: '80vw', lg: '50vw'}}>
+                        <HStack 
+                            key={element._id} p='2' 
+                            borderColor='gray.100' 
+                            borderWidth='2px' borderRadius='lg' 
+                            width='50%' 
+                            maxW={{base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw'}}
+                        >
                             <VStack>
                                 <div>title: {element.title} </div>
                                 <div>author: {element.author} </div>
