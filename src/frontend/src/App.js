@@ -24,7 +24,6 @@ function App() {
 
   return (
     <>
-    
       {isReady ? (
         <div className="App">
           <TopNav setScene={changeScene} />
@@ -50,7 +49,6 @@ function App() {
         )
       }
     </>
-    
   );
 }
 
