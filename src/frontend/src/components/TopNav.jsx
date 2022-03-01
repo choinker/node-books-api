@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from '@chakra-ui/react';
+import { Button, VStack, IconButton } from '@chakra-ui/react';
 
 const TopNav = ({setScene}) => {
 
 
     return (
-        <div> 
+        <VStack>
+            <IconButton isRound />
             <h1>top nav</h1>
             <div style={{display: 'flex', justifyContent: 'space-around', backgroundColor: '5e88dd'}}>
                 <Button onClick={() => {setScene('books')}} > 
@@ -27,7 +28,7 @@ const TopNav = ({setScene}) => {
                     onClick={() => {setScene('beers')}}
                 > Beers </button> */}
             </div>
-        </div>
+        </VStack>
     );
 };
 
