@@ -29,7 +29,8 @@ function App() {
         <div className="App">
           <TopNav setScene={changeScene} />
           <DefaultReactHeader />
-          <CategoryHome categoryName={scene} categoryData={books} />
+          {scene === 'quotes' && <div> quotes </div>}
+          {scene !== 'quotes' && <CategoryHome categoryName={scene} categoryData={books} />}
         </div>
         ) : (
           <div>loading</div>

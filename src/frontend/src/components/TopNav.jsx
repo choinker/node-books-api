@@ -31,6 +31,9 @@ const TopNav = ({setScene}) => {
                 <Button onClick={() => {setScene('games')}} > 
                     Games 
                 </Button>
+                <Button onClick={() => {setScene('quotes')}} > 
+                    Quotes 
+                </Button>
                 {/* <button
                     onClick={() => {setScene('cocktails')}}
                 > Cocktails </button>

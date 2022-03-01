@@ -1,6 +1,7 @@
 import React from 'react';
 import { HStack, VStack, IconButton, StackDivider } from '@chakra-ui/react';
 import { FaHeart } from 'react-icons/fa';
+import AddBook from './AddBook';
 
 const CategoryHome = ({categoryName = 'default', categoryData = []}) => {
 
@@ -13,6 +14,8 @@ const CategoryHome = ({categoryName = 'default', categoryData = []}) => {
             <h2>
                 Category Home: {categoryName}
             </h2>
+            <AddBook />
+
             <div style={{display: 'flex', justifyContent: 'space-around'}}>
                 {categoryData && categoryData.map((element) => {
                     return (
